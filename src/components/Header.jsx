@@ -1,12 +1,22 @@
+import { RiMenu3Fill } from '@remixicon/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
-    <div className='w-full h-20 bg-[#CAC6C5] p-5 flex items-center justify-evenly'>
+    <div className='w-full h-20 bg-[#FFFFFF] py-2 px-6 flex items-center justify-between fixed top-0 left-0 z-50 border-b-[1.5px] border-[#e5e0e0]'>
 
+      <div className='left_part flex items-center justify-between gap-4 cursor-pointer'>
+        <div className='menu'>
+          <RiMenu3Fill />
+        </div>
+        <Link to="/">
+          <h1 className='text-2xl'>ToDoes</h1>
+        </Link>
+      </div>
       <div className='w-full max-w-sm relative'>
         <input
-          className='w-full rounded-full py-2 px-6 indent-4'
+          className='w-full border-gray-600 border-[1.5px] rounded-full py-2 px-6 indent-4 outline-none'
           type="text" placeholder='search' />
 
         <div className='absolute left-[8px] top-[8px]'>

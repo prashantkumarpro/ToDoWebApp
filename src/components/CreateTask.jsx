@@ -33,7 +33,7 @@ export const CreateTask = () => {
 
 
   return (
-    <div className='p-20 w-full h-auto'>
+    <div className='px-6  py-4 w-full h-auto'>
 
       <div className='p-2 w-full my-0 bg-[#CAC6C5] rounded-md '>
 

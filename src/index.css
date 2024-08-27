@@ -25,6 +25,29 @@ textarea {
   text-transform: capitalize;
 }
 
-.sideNavContainer{
-  height: 100vh;
+
+
+.sideNavContainer a li:hover{
+  border: none;
+  background-color: #F1F3F4;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+@media (max-width:650px) {
+  .sideNavContainer {
+    width: auto;
+    border: none;
+  }
+  .sideNavContainer a{
+    border: none;
+  }
+
+
+  .sideNavContainer a h1 {
+    display: none;
+  }
+
+  .sideNavContainer a li{
+    flex-direction: column;
+  }
 }

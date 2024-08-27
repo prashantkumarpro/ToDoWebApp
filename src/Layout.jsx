@@ -5,12 +5,16 @@ import { SideNav } from './components/SideNav'
 
 const Layout = () => {
     return (
-        <main className='bg-slate-200 w-full h-full flex items-start justify-between'>
-            <SideNav />
-            <div className='flex flex-col w-full gap-2'>
-                <Header />
-                <Outlet />
+        <main className=' w-full h-full bg-[#FFFFFF]  flex-col'>
+            <Header />
+            <div className='w-full  h-[100vh] overflow-hidden  flex items-start justify-start gap-5'>
+                <SideNav />
+                <div className='w-full h-[100vh] mt-20 overflow-x-hidden overflow-y-scroll'>
+                    <Outlet />
+                </div>
             </div>
+
+
         </main>
     )
 }
