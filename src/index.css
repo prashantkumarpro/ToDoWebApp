@@ -24,7 +24,20 @@ input,
 textarea {
   text-transform: capitalize;
 }
+.all_tasks li:nth-last-child(-n+1) {
+  margin-bottom: 100px;
+}
 
+.crete_task_container {
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+  /* background-color: rgba(0, 0, 0, .2); */
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  min-height: 28px;
+  /* padding: 100px 0 0; */
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
 
 
 .sideNavContainer a li:hover{
@@ -49,5 +62,13 @@ textarea {
 
   .sideNavContainer a li{
     flex-direction: column;
+  }
+  .search_box{
+    display: none;
+  }
+
+  .search_icon{
+    display: block;
+    color: black;
   }
 }

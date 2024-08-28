@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import Save from './Buttons/Save';
 import { useParams } from 'react-router-dom';
 
+
 export const CreateTask = () => {
 
   const [title, setTitle] = useState('');
   const [note, setNote] = useState('')
   const [items, setItems] = useState([]);
+
+
 
   const myPrams = useParams()
 
@@ -35,7 +38,7 @@ export const CreateTask = () => {
   return (
     <div className='px-6  py-4 w-full h-auto'>
 
-      <div className='p-2 w-full my-0 bg-[#CAC6C5] rounded-md '>
+      <div className='crete_task_container p-2 w-full my-0 bg-[#FFFFFF]  rounded-md '>
 
         <input
           type="text"
