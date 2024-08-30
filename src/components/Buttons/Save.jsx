@@ -1,8 +1,9 @@
+import { useContext } from "react";
+import { toDoesContext } from "../context/ToDoesContext";
 
 
 const Save = ({ note, title, onSave }) => {
-
-
+  const { tasks } = useContext(toDoesContext)
 
   const handleSaveBtn = () => {
     if (title === "") {
@@ -13,9 +14,10 @@ const Save = ({ note, title, onSave }) => {
       alert('enter the note');
       return
     }
-    // Create an object and call the onSave function passed as prop
-    const obj = { title, note };
-    onSave(obj);
+
+    onSave(title, note);
+    console.log(tasks)
+
   }
 
   return (
