@@ -24,34 +24,36 @@ input,
 textarea {
   text-transform: capitalize;
 }
+
 .all_tasks li:nth-last-child(-n+1) {
   margin-bottom: 100px;
 }
 
 .crete_task_container {
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
-  /* background-color: rgba(0, 0, 0, .2); */
   background-clip: padding-box;
   border: solid transparent;
   border-width: 1px 1px 1px 6px;
   min-height: 28px;
-  /* padding: 100px 0 0; */
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+  -moz-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
 }
 
 
-.sideNavContainer a li:hover{
+.sideNavContainer a li:hover {
   border: none;
   background-color: #F1F3F4;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
 @media (max-width:650px) {
   .sideNavContainer {
     width: auto;
     border: none;
   }
-  .sideNavContainer a{
+
+  .sideNavContainer a {
     border: none;
   }
 
@@ -68,11 +70,11 @@ textarea {
     padding-left: 30px;
     width: 160px;
   } */
-  .search_box{
+  .search_box {
     display: none;
   }
 
-  .search_icon{
+  .search_icon {
     display: block;
     color: black;
   }
