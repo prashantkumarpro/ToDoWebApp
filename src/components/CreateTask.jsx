@@ -66,7 +66,7 @@ export const CreateTask = () => {
         </textarea>
         {/* <Save title={title} note={note} onSave={handleSave} /> */}
         <button
-          className='cursor-pointer py-2 px-4  bg-blue-500'
+          className='cursor-pointer py-2 px-6 rounded-sm bg-slate-600 text-white hover:bg-slate-400 hover:text-black'
           onClick={handleAddBtn} >Add</button>
 
       </div>

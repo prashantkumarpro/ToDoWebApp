@@ -60,9 +60,14 @@ textarea {
     display: none;
   }
 
-  .sideNavContainer a li{
-    flex-direction: column;
-  }
+  /* .sideNavContainer a li{
+    display: flex;
+  } */
+
+  /* .sideNavContainer a li div{
+    padding-left: 30px;
+    width: 160px;
+  } */
   .search_box{
     display: none;
   }
