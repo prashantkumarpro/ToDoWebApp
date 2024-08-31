@@ -5,11 +5,11 @@ import { SideNav } from './components/SideNav'
 
 const Layout = () => {
     return (
-        <main className=' w-full h-full bg-[#FFFFFF]  flex-col'>
+        <main className='layout_container w-full h-full bg-[#FFFFFF]  flex-col'>
             <Header />
-            <div className='w-full  h-[100vh] overflow-hidden  flex items-start justify-start gap-5'>
+            <div className='w-full  h-[100vh] overflow-hidden  flex items-start justify-start gap-1'>
                 <SideNav />
-                <div className='w-full h-[100vh] mt-20 p-5 overflow-x-hidden overflow-y-scroll'>
+                <div className='outlet_container w-full h-[100vh] mt-20 p-5 overflow-x-hidden overflow-y-scroll'>
                     <Outlet />
                 </div>
             </div>

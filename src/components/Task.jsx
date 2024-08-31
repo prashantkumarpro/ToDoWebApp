@@ -5,11 +5,10 @@ import { toDoesContext } from "./context/ToDoesContext"
 export const Task = () => {
 
     const { tasks } = useContext(toDoesContext)
-    console.log(tasks)
     
     return (
         <div className='w-full h-full'>
-            <ul className='all_tasks w-full px-5 h-auto  flex items-start justify-start gap-5 flex-wrap '>
+            <ul className='all_tasks bg-repeat-round w-full px-5 h-auto  flex items-start justify-start gap-5 flex-wrap '>
                 {tasks.map((item) => (
                     <li
                         key={item.id}

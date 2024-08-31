@@ -5,6 +5,8 @@ import { CreateTask } from './components/CreateTask'
 import { Task } from './components/Task'
 import { Home } from './components/Home'
 import MobileSearch from './components/MobileSearch'
+import Result from './components/Result'
+
 
 const Root = () => {
     return (
@@ -14,7 +16,7 @@ const Root = () => {
                     <Route path='createTask' element={<CreateTask />} />
                     <Route path='allTask' element={<Task />} />
                     <Route path='/' element={<Home />} />
-                    
+                    <Route path='/taskId' element={<Result />} />
                 </Route>
                 <Route path='/Search' element={<MobileSearch />} />
             </Routes>

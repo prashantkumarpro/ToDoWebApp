@@ -46,10 +46,9 @@ export const CreateTask = () => {
   }
 
   return (
-    <div className='px-6  py-4 w-full h-auto'>
+    <div className='crete_task_container px-6  py-4 w-full h-auto'>
 
-      <div className='crete_task_container p-2 w-full my-0 bg-[#FFFFFF]  rounded-md '>
-
+      <div className='taskInput p-2 w-full my-0 bg-[#FFFFFF]  rounded-md '>
         <input
           type="text"
           value={title}

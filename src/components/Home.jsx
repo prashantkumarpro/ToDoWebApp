@@ -9,7 +9,7 @@ export const Home = () => {
     const { tasks } = useContext(toDoesContext)
 
     return (
-        <div className='p-5'>
+        <div className='home_container p-5'>
             <h1 className="text-2xl">Tasks</h1>
             <ul className='w-full max-w-[720px] h-[auto] bg-white shadow-lg p-4 mt-3 rounded-lg' >
                 {tasks.map(task => (

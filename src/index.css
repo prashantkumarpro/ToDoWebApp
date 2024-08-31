@@ -29,14 +29,14 @@ textarea {
   margin-bottom: 100px;
 }
 
-.crete_task_container {
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+.taskInput {
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, .1), 0 -1px 0 rgba(0, 0, 0, .07);
   background-clip: padding-box;
   border: solid transparent;
   border-width: 1px 1px 1px 6px;
   min-height: 28px;
-  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
-  -moz-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, .1), 0 -1px 0 rgba(0, 0, 0, .07);
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, .1), 0 -1px 0 rgba(0, 0, 0, .07);
 }
 
 
@@ -48,6 +48,10 @@ textarea {
 }
 
 @media (max-width:650px) {
+.header_container{
+  padding: 0 10px;
+}
+  
   .sideNavContainer {
     width: auto;
     border: none;
@@ -62,14 +66,22 @@ textarea {
     display: none;
   }
 
-  /* .sideNavContainer a li{
-    display: flex;
-  } */
+  .all_tasks {
+    padding: 0;
+  }
 
-  /* .sideNavContainer a li div{
-    padding-left: 30px;
-    width: 160px;
-  } */
+  .outlet_container {
+    padding: 1px 0;
+  }
+
+  .home_container {
+    padding: 0px 2px;
+  }
+
+  .crete_task_container {
+    padding: 0px 10px 0px 0px;
+  }
+
   .search_box {
     display: none;
   }
