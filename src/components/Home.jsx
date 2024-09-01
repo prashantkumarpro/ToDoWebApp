@@ -2,11 +2,18 @@ import { useContext } from "react"
 import Edit from "./Buttons/Edit"
 import Remove from "./Buttons/Remove"
 import { toDoesContext } from "./context/ToDoesContext"
+import { useNavigate } from "react-router-dom"
 
 
 export const Home = () => {
 
     const { tasks } = useContext(toDoesContext);
+    const navigate = useNavigate();
+
+    const handleTask = () => {
+        navigate('/Task')
+
+    }
 
     return (
         <div className='home_container p-5'>
@@ -16,9 +23,11 @@ export const Home = () => {
                     <li
                         key={id}
                         className='w-full h-auto bg-slate-100 flex items-center justify-between p-2 my-3 rounded-md cursor-pointer shadow-inner'>
-                        <h3 className="text-sm">{title}</h3>
+                        <h3
+                            onClick={handleTask}
+                            className="text-sm">{title}</h3>
                         <div className="flex items-center justify-center gap-5">
-                            <Edit />
+                            <Edit id={id} />
                             <Remove />
                         </div>
                     </li>
