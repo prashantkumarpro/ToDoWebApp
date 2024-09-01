@@ -6,6 +6,8 @@ import { Task } from './components/Task'
 import { Home } from './components/Home'
 import MobileSearch from './components/MobileSearch'
 import Result from './components/Result'
+import EditPage from './components/EditPage'
+
 
 
 const Root = () => {
@@ -13,10 +15,11 @@ const Root = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout />}>
+                    <Route path='/' element={<Home />} />
                     <Route path='createTask' element={<CreateTask />} />
                     <Route path='allTask' element={<Task />} />
-                    <Route path='/' element={<Home />} />
-                    <Route path='/taskId' element={<Result />} />
+                    <Route path='/EditTask' element={<EditPage />} />
+                    <Route path='/Result/:searchQuery' element={<Result />} />
                 </Route>
                 <Route path='/Search' element={<MobileSearch />} />
             </Routes>
