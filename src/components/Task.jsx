@@ -1,27 +1,30 @@
-import { useContext } from "react"
-import { toDoesContext } from "./context/ToDoesContext"
-
+import { useContext, useEffect, useState } from "react";
+import { toDoesContext } from "./context/ToDoesContext";
+import { useParams } from "react-router-dom";
 
 export const Task = () => {
+    const [currentTask, setCurrentTask] = useState(null);
+    const { tasks } = useContext(toDoesContext);
+    const { taskId } = useParams();
 
-    const { tasks } = useContext(toDoesContext)
-    
+    useEffect(() => {
+        if (tasks.length > 0) {
+            const task = tasks.find(task => task.id == taskId);
+            setCurrentTask(task);
+        }
+    }, [taskId, tasks]);
+
     return (
         <div className='w-full h-full'>
-            <ul className='all_tasks bg-repeat-round w-full px-5 h-auto  flex items-start justify-start gap-5 flex-wrap '>
-                {tasks.map((item) => (
-                    <li
-                        key={item.id}
-                        className='p-2 w-[220px] h-auto bg-[#FFFFFF] border-[1.2px] rounded-xl cursor-pointer mb-3  text-gray-950 shadow-white'>
-                        <h5 className='text-sm font-bold uppercase border-b-[1px] py-1'>{item.title}</h5>
-                        <p className='my-2 text-sm'>{item.note} </p>
-                        <p></p>
-                    </li>
-                ))}
-            </ul>
+            {currentTask ? (
+                <div className='p-5'>
+                    <h2 className='text-xl font-bold uppercase'>{currentTask.title}</h2>
+                    <p className='mt-3'>{currentTask.note}</p>
 
+                </div>
+            ) : (
+                <p>Task not found.</p>
+            )}
         </div>
-    )
-}
-
-
+    );
+};

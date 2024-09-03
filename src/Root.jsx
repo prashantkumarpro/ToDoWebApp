@@ -18,9 +18,9 @@ const Root = () => {
                     <Route path='/' element={<Home />} />
                     <Route path='createTask' element={<CreateTask />} />
                     <Route path='allTask' element={<Task />} />
-                    <Route path='/EditTask/:editTask' element={<EditPage />} />
+                    <Route path='/EditTask/:editTaskId' element={<EditPage />} />
                     <Route path='/Result/:searchQuery' element={<Result />} />
-                    <Route path='/Task' element={<Task />} />
+                    <Route path='/Task/:taskId' element={<Task />} />
                 </Route>
                 <Route path='/Search' element={<MobileSearch />} />
             </Routes>

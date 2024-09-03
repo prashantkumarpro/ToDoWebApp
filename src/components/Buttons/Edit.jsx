@@ -6,7 +6,7 @@ const Edit = ({ id }) => {
     const handelEdit = () => {
         console.log('Edit button is')
         navigate(`/EditTask/${id}`)
-        // console.log(id, title)
+      
     }
     return (
 

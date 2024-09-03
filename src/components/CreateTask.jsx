@@ -22,13 +22,7 @@ export const CreateTask = () => {
     setNote(e.target.value)
 
   }
-
-  // const handleSave = (title, note) => {
-  //   setTitle(''); // Clear the title
-  //   setNote('');  // Clear the note
-  //   addTask(title, note)
-  // };
-
+  
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
     }
@@ -42,6 +36,7 @@ export const CreateTask = () => {
       addTask(title, note)
       setNote('')
       setTitle('')
+      console.log(tasks)
     }
   }
 
