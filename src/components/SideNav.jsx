@@ -22,14 +22,14 @@ export const SideNav = () => {
           <h1 className='text-sm'>Add</h1>
         </li>
       </Link>
-      <Link to="/allTask" className='w-full text-center text-[#000]  text-xl  flex items-center justify-start '>
+      {/* <Link to="/allTask" className='w-full text-center text-[#000]  text-xl  flex items-center justify-start '>
         <li className='w-full flex items-center justify-start py-2'>
           <div className='px-4'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 3V21.0082C21 21.556 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918C3 2.44405 3.44495 2 3.9934 2H20C20.5523 2 21 2.44772 21 3ZM11.2929 13.1213L8.81802 10.6464L7.40381 12.0607L11.2929 15.9497L16.9497 10.2929L15.5355 8.87868L11.2929 13.1213Z"></path></svg>
           </div>
           <h1 className='text-sm'>All Tasks</h1>
         </li>
-      </Link>
+      </Link> */}
     </ul>
   )
 }

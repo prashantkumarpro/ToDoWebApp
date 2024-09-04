@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 const Edit = ({ id }) => {
     const navigate = useNavigate()
     const handelEdit = () => {
-        console.log('Edit button is')
         navigate(`/EditTask/${id}`)
       
     }

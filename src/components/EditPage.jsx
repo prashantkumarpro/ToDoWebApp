@@ -10,13 +10,15 @@ const EditPage = () => {
 
   useEffect(() => {
     if (tasks.length > 0) {
-      const task = tasks.find(task => task.id === Number(editTaskId));
+      const task = tasks.find(task => task.id == editTaskId);
+      console.log(task)
       setCurrentTask(task);
     }
   }, [editTaskId, tasks]);
 
   const handleTitleChange = (e) => {
     setCurrentTask({ ...currentTask, title: e.target.value });
+    tasks.find()
   };
 
   const handleNoteChange = (e) => {
