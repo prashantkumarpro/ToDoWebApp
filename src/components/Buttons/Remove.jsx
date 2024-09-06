@@ -5,7 +5,7 @@ const Remove = ({ taskId }) => {
     const { deleteTask } = useContext(toDoesContext); // Get deleteTask function from context
 
     const handleDelete = () => {
-        deleteTask({ id: taskId }); // Call the delete function with the task id
+        deleteTask({ _id: taskId }); // Call the delete function with the task id
     };
 
     return (

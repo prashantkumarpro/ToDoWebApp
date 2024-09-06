@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toDoesContext } from "./ToDoesContext";
 
 // Create a provider component
@@ -6,8 +6,40 @@ export const ToDoesProvider = ({ children }) => {
 
     const [tasks, setTasks] = useState([])
 
-    const addTask = (title, note) => {
-        const newTask = { id: Date.now(), title: title, note: note }
+
+    // Fetch initial data
+    const fetchedData = async () => {
+        try {
+            const res = await fetch('https://api.freeapi.app/api/v1/todos')
+            const data = await res.json()
+            console.log(data.data)
+            setTasks(data.data)
+        } catch (error) {
+            console.error("Error fetching tasks:", error);
+        }
+    }
+
+
+
+    const addTask = async (title, note) => {
+        const res = await fetch('https://api.freeapi.app/api/v1/todos/', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                description: note,
+                title: title,
+                completed: false,
+            }),
+        })
+
+        const newTodo = res.json()
+        console.log(newTodo)
+        const newTask = {
+            _id: newTodo.id, // ID returned from API
+            title: title,
+            note: newTodo.todo, // 'todo' from API response
+        }
+
         setTasks([...tasks, newTask])
     }
 
@@ -22,13 +54,23 @@ export const ToDoesProvider = ({ children }) => {
 
 
     // Function to delete a specific task
-    const deleteTask = (deletedTask) => {
+    const deleteTask = async (deletedTask) => {
+        const res = await fetch(`https://api.freeapi.app/api/v1/todos/${deletedTask._id}`,{
+            method:"DELETE"
+        })
+
+
         setTasks((prevTasks) =>
             prevTasks.filter((task) =>
-                task.id !== deletedTask.id // Keep tasks that do not match the deleted task's id
+                task._id !== deletedTask._id // Keep tasks that do not match the deleted task's id
             )
         );
     };
+
+
+    useEffect(() => {
+        fetchedData()
+    }, [])
 
     return (
         <toDoesContext.Provider value={{ tasks, addTask, updateTask, deleteTask }}>

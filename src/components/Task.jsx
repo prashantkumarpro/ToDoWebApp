@@ -9,7 +9,7 @@ export const Task = () => {
 
     useEffect(() => {
         if (tasks.length > 0) {
-            const task = tasks.find(task => task.id == taskId);
+            const task = tasks.find(task => task._id == taskId);
             setCurrentTask(task);
         }
     }, [taskId, tasks]);
@@ -19,7 +19,7 @@ export const Task = () => {
             {currentTask ? (
                 <div className='p-5'>
                     <h2 className='text-xl font-bold uppercase'>{currentTask.title}</h2>
-                    <p className='mt-3'>{currentTask.note}</p>
+                    <p className='mt-3'>{currentTask.description}</p>
 
                 </div>
             ) : (

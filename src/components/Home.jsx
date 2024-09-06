@@ -9,7 +9,6 @@ export const Home = () => {
 
     const { tasks } = useContext(toDoesContext);
     const navigate = useNavigate();
-    console.log(tasks)
 
     const handleTask = (e) => {
         const taskId = e.target.getAttribute('data-current-task');
@@ -25,17 +24,17 @@ export const Home = () => {
                 <div className='home_container p-5'>
                     <h1 className="text-2xl">Tasks</h1>
                     <ul className='w-full max-w-[720px] h-[auto] bg-white shadow-lg p-4 mt-3 rounded-lg' >
-                        {tasks.map(({ id, title }) => (
-                            <li
-                                key={id}
+                        {tasks.map(({ _id, title }) => (
+
+                            <li key={_id}
                                 className='item w-full h-auto bg-slate-100 flex items-center justify-between p-2 my-3 rounded-md shadow-inner'>
                                 <h3
-                                    data-current-task={id}
+                                    data-current-task={_id}
                                     onClick={handleTask}
                                     className="text-sm cursor-pointer uppercase">{title}</h3>
                                 <div className="buttons flex items-center justify-center gap-5">
-                                    <Edit id={id} />
-                                    <Remove taskId={id} />
+                                    <Edit id={_id} />
+                                    <Remove taskId={_id} />
                                 </div>
                             </li>
                         ))}
