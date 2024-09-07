@@ -22,7 +22,7 @@ export const CreateTask = () => {
     setNote(e.target.value)
 
   }
-  
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
     }
@@ -65,12 +65,12 @@ export const CreateTask = () => {
 
       </div>
       <ul className='mt-4 w-full flex items-start justify-start gap-2 flex-wrap mb-8'>
-        {tasks.map((item, index) => (
+        {tasks.map(({ description, _id, title }) => (
           <li
-            key={index}
+            key={_id}
             className='p-2 w-[220px] h-auto bg-slate-50 my-3 overflow-hidden text-gray-950 mb-10'>
-            <h3 className='text-sm font-semibold uppercase border-b-2'>{item.title}</h3>
-            <p className='my-2'>{item.note} </p>
+            <h3 className='text-sm font-semibold uppercase border-b-2'>{title}</h3>
+            <p className='my-2'>{description} </p>
 
           </li>
         ))}

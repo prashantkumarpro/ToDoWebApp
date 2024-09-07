@@ -12,7 +12,6 @@ export const ToDoesProvider = ({ children }) => {
         try {
             const res = await fetch('https://api.freeapi.app/api/v1/todos')
             const data = await res.json()
-            console.log(data.data)
             setTasks(data.data)
         } catch (error) {
             console.error("Error fetching tasks:", error);
@@ -33,13 +32,13 @@ export const ToDoesProvider = ({ children }) => {
         })
 
         const newTodo = res.json()
-        console.log(newTodo)
+
         const newTask = {
             _id: newTodo.id, // ID returned from API
             title: title,
             note: newTodo.todo, // 'todo' from API response
         }
-
+        console.log(newTask)
         setTasks([...tasks, newTask])
     }
 
@@ -55,10 +54,9 @@ export const ToDoesProvider = ({ children }) => {
 
     // Function to delete a specific task
     const deleteTask = async (deletedTask) => {
-        const res = await fetch(`https://api.freeapi.app/api/v1/todos/${deletedTask._id}`,{
-            method:"DELETE"
+        const res = await fetch(`https://api.freeapi.app/api/v1/todos/${deletedTask._id}`, {
+            method: "DELETE"
         })
-
 
         setTasks((prevTasks) =>
             prevTasks.filter((task) =>

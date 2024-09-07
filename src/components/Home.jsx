@@ -9,11 +9,13 @@ export const Home = () => {
 
     const { tasks } = useContext(toDoesContext);
     const navigate = useNavigate();
-
+    
+    {
+        (tasks.map(task => console.log(task._id)))
+    }
     const handleTask = (e) => {
         const taskId = e.target.getAttribute('data-current-task');
         navigate(`/Task/${taskId}`)
-        console.log(taskId)
     }
 
 
@@ -43,7 +45,7 @@ export const Home = () => {
                 </div>
             ) : (
                 <div className="absolute -translate-x-[50%] -translate-y-[50%] left-[50%] top-[50%]">
-                    <p className="text-2xl ">Notes you add appere here</p>
+                    <p className="emty_home_text text-2xl ">Notes you add appere here</p>
                 </div>
 
             )}
