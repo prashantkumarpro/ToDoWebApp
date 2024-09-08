@@ -10,19 +10,17 @@ const EditPage = () => {
 
   useEffect(() => {
     if (tasks.length > 0) {
-      const task = tasks.find(task => task.id == editTaskId);
-      console.log(task)
+      const task = tasks.find(task => task._id === editTaskId);
       setCurrentTask(task);
     }
   }, [editTaskId, tasks]);
 
   const handleTitleChange = (e) => {
     setCurrentTask({ ...currentTask, title: e.target.value });
-    tasks.find()
   };
 
   const handleNoteChange = (e) => {
-    setCurrentTask({ ...currentTask, note: e.target.value });
+    setCurrentTask({ ...currentTask, description: e.target.value });
   };
 
   const handleSave = () => {
@@ -43,8 +41,7 @@ const EditPage = () => {
           />
           <textarea
             name="note"
-            id="note"
-            value={currentTask.note}
+            value={currentTask.description}
             onChange={handleNoteChange}
             className='w-full bg-transparent h-auto outline-none overflow-auto -scroll-ml-56'
             placeholder='Take a notes'

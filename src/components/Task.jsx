@@ -19,8 +19,7 @@ export const Task = () => {
             {currentTask ? (
                 <div className='p-5'>
                     <h2 className='text-xl font-bold uppercase'>{currentTask.title}</h2>
-                    <p className='mt-3'>{currentTask.description}</p>
-
+                    <p className='mt-3 uppercase'>{currentTask.description}</p>
                 </div>
             ) : (
                 <p>Task not found.</p>

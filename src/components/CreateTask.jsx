@@ -36,7 +36,6 @@ export const CreateTask = () => {
       addTask(title, note)
       setNote('')
       setTitle('')
-      console.log(tasks)
     }
   }
 
@@ -52,7 +51,7 @@ export const CreateTask = () => {
           placeholder='Title'
           onKeyDown={handleKeyDown}
         />
-        <textarea name="note" id="note"
+        <textarea name="note"
           value={note}
           onChange={handleNote}
           className='w-full bg-transparent h-auto outline-none overflow-auto -scroll-ml-56'
@@ -65,12 +64,12 @@ export const CreateTask = () => {
 
       </div>
       <ul className='mt-4 w-full flex items-start justify-start gap-2 flex-wrap mb-8'>
-        {tasks.map(({ description, _id, title }) => (
+        {tasks.length > 0 && tasks.map(({ title, _id, description }) => (
           <li
             key={_id}
-            className='p-2 w-[220px] h-auto bg-slate-50 my-3 overflow-hidden text-gray-950 mb-10'>
+            className='p-4  w-[220px] h-auto bg-slate-50 my-3 overflow-hidden text-gray-950 mb-10 shadow-md rounded-md'>
             <h3 className='text-sm font-semibold uppercase border-b-2'>{title}</h3>
-            <p className='my-2'>{description} </p>
+            <p className='my-4 uppercase text-sm'>{description}</p>
 
           </li>
         ))}

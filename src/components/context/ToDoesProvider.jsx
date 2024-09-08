@@ -19,7 +19,7 @@ export const ToDoesProvider = ({ children }) => {
     }
 
 
-
+    // Function to add/create a specific task
     const addTask = async (title, note) => {
         const res = await fetch('https://api.freeapi.app/api/v1/todos/', {
             method: 'post',
@@ -31,22 +31,31 @@ export const ToDoesProvider = ({ children }) => {
             }),
         })
 
-        const newTodo = res.json()
+        const newTodo = await res.json()
 
         const newTask = {
-            _id: newTodo.id, // ID returned from API
-            title: title,
-            note: newTodo.todo, // 'todo' from API response
+            title: newTodo.data.title,
+            description: newTodo.data.description,
+            _id: newTodo.data._id
         }
-        console.log(newTask)
+
         setTasks([...tasks, newTask])
     }
 
     // Function to update a specific task
-    const updateTask = (updatedTask) => {
+    const updateTask = async (updatedTask) => {
+        const res = await fetch(`https://api.freeapi.app/api/v1/todos/${updatedTask._id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                description: updatedTask.description,
+                title: updatedTask.title,
+            }),
+        })
+
         setTasks((prevTasks) =>
             prevTasks.map((task) =>
-                task.id === updatedTask.id ? updatedTask : task
+                task._id === updatedTask._id ? updatedTask : task
             )
         );
     };
@@ -68,6 +77,7 @@ export const ToDoesProvider = ({ children }) => {
 
     useEffect(() => {
         fetchedData()
+
     }, [])
 
     return (

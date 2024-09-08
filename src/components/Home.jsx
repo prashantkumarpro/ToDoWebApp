@@ -9,10 +9,7 @@ export const Home = () => {
 
     const { tasks } = useContext(toDoesContext);
     const navigate = useNavigate();
-    
-    {
-        (tasks.map(task => console.log(task._id)))
-    }
+   
     const handleTask = (e) => {
         const taskId = e.target.getAttribute('data-current-task');
         navigate(`/Task/${taskId}`)
@@ -35,8 +32,10 @@ export const Home = () => {
                                     onClick={handleTask}
                                     className="text-sm cursor-pointer uppercase">{title}</h3>
                                 <div className="buttons flex items-center justify-center gap-5">
-                                    <Edit id={_id} />
+                                    <Edit taskId={_id} />
                                     <Remove taskId={_id} />
+                                  
+                                    
                                 </div>
                             </li>
                         ))}
