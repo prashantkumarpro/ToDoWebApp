@@ -23,6 +23,7 @@ export const Task = () => {
                 </div>
             ) : (
                 <p>Task not found.</p>
+               
             )}
         </div>
     );

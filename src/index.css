@@ -47,19 +47,25 @@ textarea {
   border-bottom-right-radius: 50px;
 }
 
-@media (max-width:650px) {
-.header_container{
-  padding: 0 10px;
+.sideNavContainer a {
+  border: none;
 }
-  
+
+.sideNavContainer a.active {
+  border: block;
+}
+
+@media (max-width:650px) {
+  .header_container {
+    padding: 0 10px;
+  }
+
   .sideNavContainer {
     width: auto;
     border: none;
   }
 
-  .sideNavContainer a {
-    border: none;
-  }
+
 
 
   .sideNavContainer a h1 {
@@ -92,7 +98,7 @@ textarea {
     color: black;
   }
 
-  .emty_home_text{
+  .emty_home_text {
     font-size: 1rem;
     line-height: 1rem;
   }

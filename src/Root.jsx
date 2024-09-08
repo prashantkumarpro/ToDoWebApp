@@ -15,7 +15,7 @@ const Root = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout />}>
-                    <Route path='/' element={<Home />} />
+                    <Route index element={<Home />} />
                     <Route path='createTask' element={<CreateTask />} />
                     <Route path='allTask' element={<Task />} />
                     <Route path='/EditTask/:editTaskId' element={<EditPage />} />
