@@ -10,7 +10,7 @@ export const CreateTask = () => {
 
   const [title, setTitle] = useState('');
   const [note, setNote] = useState('')
-  const { tasks, addTask } = useContext(toDoesContext)
+  const { addTask } = useContext(toDoesContext)
 
 
 
@@ -63,17 +63,7 @@ export const CreateTask = () => {
           onClick={handleAddBtn} >Add</button>
 
       </div>
-      <ul className='mt-4 w-full flex items-start justify-start gap-2 flex-wrap mb-8'>
-        {tasks.length > 0 && tasks.map(({ title, _id, description }) => (
-          <li
-            key={_id}
-            className='p-4  w-[220px] h-auto bg-slate-50 my-3 overflow-hidden text-gray-950 mb-10 shadow-md rounded-md'>
-            <h3 className='text-sm font-semibold uppercase border-b-2'>{title}</h3>
-            <p className='my-4 uppercase text-sm'>{description}</p>
 
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }

@@ -75,13 +75,19 @@ export const ToDoesProvider = ({ children }) => {
     };
 
 
+    const [isActive, setIsActive] = useState(false)
+
+    const handleMenu = () => {
+        setIsActive(!isActive)
+    }
+
     useEffect(() => {
         fetchedData()
 
     }, [])
 
     return (
-        <toDoesContext.Provider value={{ tasks, addTask, updateTask, deleteTask }}>
+        <toDoesContext.Provider value={{ tasks, addTask, updateTask, deleteTask, handleMenu, setIsActive, isActive }}>
             {children}
         </toDoesContext.Provider>
     )
