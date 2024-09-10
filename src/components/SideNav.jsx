@@ -7,7 +7,7 @@ export const SideNav = () => {
   return (
     <ul className=
       {`
-    sideNavContainer  w-[220px] h-[calc(100% - 5rem)] overflow-hidden flex items-center flex-col mt-20 gap-2`} >
+    sideNavContainer  w-[280px] h-[calc(100% - 5rem)] overflow-hidden flex items-center flex-col mt-20 gap-2`} >
       <Link to="/" className='w-full text-center text-[#333]  text-xl  flex items-center justify-start'>
         <li className='w-full flex items-center justify-start py-2'>
           <div className='px-5'>

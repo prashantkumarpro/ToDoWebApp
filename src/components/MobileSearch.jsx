@@ -8,8 +8,13 @@ const MobileSearch = () => {
 
 
     const handelSearch = () => {
-        navigate(`/Result/${input}`)
-        setInput('')
+        if (input.length > 0) {
+            navigate(`/Result/${input}`)
+            setInput('')
+        } else{
+            alert('Please enter note')
+        }
+
     }
     const handleKey = (e) => {
         if (e.key === "Enter") {

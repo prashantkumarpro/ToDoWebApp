@@ -8,11 +8,16 @@ const Search = () => {
 
 
     const handelSearch = () => {
-        navigate(`/Result/${query}`)
-        setQuery('')
+        if (query.length > 0) {
+            navigate(`/Result/${query}`)
+            setQuery('')
+        } else{
+            alert('please enter note')
+        }
+
     }
-    const handleKey = (e)=>{
-        if(e.key === "Enter"){
+    const handleKey = (e) => {
+        if (e.key === "Enter") {
             handelSearch()
         }
     }

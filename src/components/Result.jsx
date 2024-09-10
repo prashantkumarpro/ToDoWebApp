@@ -8,8 +8,9 @@ const Result = () => {
   const [searchTask, setSearchTask] = useState([])
 
   const searchedTasks = () => {
-    const includedTasks = tasks.filter(task => task.title.includes(searchQuery));
+    const includedTasks = tasks.filter(task => task.title.startsWith(searchQuery));
     setSearchTask(includedTasks)
+    
   }
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Result = () => {
         to='/'>Go Back</Link>
       {searchTask.length > 0 ? (
         <ul className='flex items-start justify-start gap-2'>
-          {tasks.length > 0 && tasks.map(({ title, _id, description }) => (
+          {searchTask.length > 0 && searchTask.map(({ title, _id, description }) => (
             <li
               key={_id}
               className='p-4  w-[220px] h-auto bg-slate-50 my-3 overflow-hidden text-gray-950 mb-10 shadow-md rounded-md'>

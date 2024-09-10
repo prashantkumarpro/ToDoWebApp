@@ -9,8 +9,6 @@ import { toDoesContext } from './context/ToDoesContext'
 export const Header = () => {
 
   const { setIsActive, isActive } = useContext(toDoesContext)
-
-  console.log(isActive)
   return (
     <div className='header_container w-full h-16 bg-[#FFFFFF] py-2 px-6 flex items-center justify-between fixed top-0 left-0 z-50  shadow-md'>
 

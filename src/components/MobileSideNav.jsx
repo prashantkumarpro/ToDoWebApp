@@ -9,9 +9,9 @@ const MobileSideNav = () => {
     return (
         <ul className=
         {`${isActive ? 'block z-10' : 'hidden'} 
-        MsideNavContainer bg-[#fff] absolute left-0  w-[280px] h-[100vh] overflow-hidden flex items-center flex-col mt-20 gap-2`} >
+        MsideNavContainer bg-[#fff] absolute left-0 -top-6 w-[280px] h-[100vh] overflow-hidden flex items-center flex-col mt-20 gap-2`} >
         <Link to="/" className='w-full text-center text-[#333]  text-xl  flex items-center justify-start '>
-            <li className='w-full flex items-center justify-start py-2'>
+            <li className='w-full flex items-center justify-start py-2 mt-6'>
                 <div className='px-5'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM11 13V19H13V13H11Z"></path></svg>
 
