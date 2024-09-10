@@ -40,7 +40,7 @@ textarea {
 }
 
 
-.sideNavContainer a li:hover {
+.sideNavContainer a li:hover, .MsideNavContainer a li:hover {
   border: none;
   background-color: #F1F3F4;
   border-top-right-radius: 50px;
@@ -51,12 +51,10 @@ textarea {
   border: none;
 }
 
-/* .sideNavContainer a.active {
-  border: block;
-} */
-.sideNavContainer.a h1 {
-  display: block;
+.MsideNavContainer {
+  box-shadow: 0 16px 10px 0 rgba(0, 0, 0, .14), 0 11px 18px 0 rgba(0, 0, 0, .12), 0 13px 5px -1px rgba(0, 0, 0, .2);
 }
+
 
 @media (max-width:650px) {
   .header_container {
@@ -69,7 +67,11 @@ textarea {
 
   }
 
-  .sideNavContainer a li div {
+  .sideNavContainer a h1 {
+    display: none;
+  }
+
+  .sideNavContainer a li div, .MsideNavContainer a li div {
     padding: 0 0.5rem;
   }
 
