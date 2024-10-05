@@ -31,14 +31,16 @@ function getOneTodo(req, res, db) {
 
 // post todos
 function postTodos(req, res, db) {
-	const { id, title, todo } = req.body;
+	const { title, todo } = req.body;
 
-	if (title || !todo) {
+	console.log("result", req.body);
+
+	if (!title || !todo) {
 		return res.status(400).json({ error: "Title & Todo are required" });
 	}
 	db("todos")
 		.returning("*")
-		.insert({ id: id, title: title, todo: todo })
+		.insert({ title, todo })
 		.then((response) => {
 			res.status(201).json(response);
 		})
@@ -68,7 +70,7 @@ function updateTodo(req, res, db) {
 
 // delete todo
 function deleteTodo(req, res, db) {
-	const id = Number(req.params.taskId);
+	const id = Number(req.params.id);
 	db("todos")
 		.where({ id })
 		.del()

@@ -33,8 +33,8 @@ app.use(cors());
 // );
 
 app.get("/api/todos", (req, res) => getTodos(req, res, db));
-app.get("/api/todos/:id", (req, res) => getOneTodo(req, res, db));
 app.post("/api/todos", (req, res) => postTodos(req, res, db));
+app.get("/api/todos/:id", (req, res) => getOneTodo(req, res, db));
 app.put("/api/todos/:id", (req, res) => updateTodo(req, res, db));
 app.delete("/api/todos/:id", (req, res) => deleteTodo(req, res, db));
 

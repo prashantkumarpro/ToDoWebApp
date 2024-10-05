@@ -30,11 +30,10 @@ export const ToDoesProvider = ({ children }) => {
             const newTodo = res.json();
 
             const newTask = {
-                id: newTodo[0].id, // ID returned from API
-                title: newTodo[0].title,
-                note: newTodo[0].todo, // 'todo' from API response
+                title: title,
+                todo: note, // 'todo' from API response
             };
-            console.log(newTodo);
+            console.log(newTask);
             setTasks([...tasks, newTask]);
         } catch (error) {
             console.error("something went wrong: ", error);
@@ -53,7 +52,7 @@ export const ToDoesProvider = ({ children }) => {
     // Function to delete a specific task
     const deleteTask = async (deletedTask) => {
         const res = await fetch(
-            `https://api.freeapi.app/api/v1/todos/${deletedTask._id}`,
+            `http://localhost:8000/api/todos/${deletedTask.id}`,
             {
                 method: "DELETE",
             },
@@ -61,7 +60,7 @@ export const ToDoesProvider = ({ children }) => {
 
         setTasks((prevTasks) =>
             prevTasks.filter(
-                (task) => task._id !== deletedTask._id, // Keep tasks that do not match the deleted task's id
+                (task) => task.id !== deletedTask.id, // Keep tasks that do not match the deleted task's id
             ),
         );
     };
