@@ -17,14 +17,21 @@ export const Task = () => {
     return (
         <div className="w-full h-full">
             {currentTask ? (
+
                 <div className="p-5">
                     <h2 className="text-xl font-bold uppercase">
                         {currentTask.title}
                     </h2>
                     <p className="mt-3">{currentTask.todo}</p>
+
+                <div className='p-5'>
+                    <h2 className='text-xl font-bold uppercase'>{currentTask.title}</h2>
+                    <p className='mt-3 uppercase'>{currentTask.description}</p>
+
                 </div>
             ) : (
                 <p>Task not found.</p>
+               
             )}
         </div>
     );

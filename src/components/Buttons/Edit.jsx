@@ -1,11 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const Edit = ({ editTaskId }) => {
     const navigate = useNavigate();
     const handelEdit = () => {
         navigate(`/EditTask/${editTaskId}`);
     };
+=======
+const Edit = ({ taskId }) => {
+    const navigate = useNavigate()
+
+    const handelEdit = () => {
+        navigate(`/EditTask/${taskId}`)
+      
+    }
+    return (
+
 
     return (
         <div onClick={handelEdit} className="edit_btn cursor-pointer">

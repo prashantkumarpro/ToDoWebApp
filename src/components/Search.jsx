@@ -2,17 +2,22 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Search = () => {
-    const [input, setInput] = useState('')
+    const [query, setQuery] = useState('')
 
     const navigate = useNavigate()
 
 
     const handelSearch = () => {
-        navigate(`/Result/${input}`)
-        setInput('')
+        if (query.length > 0) {
+            navigate(`/Result/${query}`)
+            setQuery('')
+        } else{
+            alert('please enter note')
+        }
+
     }
-    const handleKey = (e)=>{
-        if(e.key === "Enter"){
+    const handleKey = (e) => {
+        if (e.key === "Enter") {
             handelSearch()
         }
     }
@@ -20,8 +25,8 @@ const Search = () => {
     return (
         <div className='search_box'>
             <input
-                value={input}
-                onInput={(e) => setInput(e.target.value)}
+                value={query}
+                onInput={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKey}
                 className='w-full border-gray-600 border-[1.5px] rounded-full py-[0.34rem] px-6 indent-4 outline-none'
                 type="text" placeholder='search'

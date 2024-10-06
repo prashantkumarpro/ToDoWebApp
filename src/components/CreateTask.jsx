@@ -5,9 +5,18 @@ import { toDoesContext } from "./context/ToDoesContext";
 // import { useParams } from 'react-router-dom';
 
 export const CreateTask = () => {
+
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
   const { tasks, addTask } = useContext(toDoesContext);
+
+
+  const [title, setTitle] = useState('');
+  const [note, setNote] = useState('')
+  const { addTask } = useContext(toDoesContext)
+
+
+
 
   const handleChange = (e) => {
     setTitle(e.target.value);
@@ -27,10 +36,16 @@ export const CreateTask = () => {
       alert("enter both title and note");
       return;
     } else {
+
       addTask(title, note);
       setNote("");
       setTitle("");
       console.log(tasks);
+
+      addTask(title, note)
+      setNote('')
+      setTitle('')
+
     }
   };
 
@@ -45,9 +60,13 @@ export const CreateTask = () => {
           placeholder="Title"
           onKeyDown={handleKeyDown}
         />
+
         <textarea
           name="note"
           id="note"
+
+        <textarea name="note"
+
           value={note}
           onChange={handleNote}
           className="w-full bg-transparent h-auto outline-none overflow-auto -scroll-ml-56"
@@ -61,6 +80,7 @@ export const CreateTask = () => {
           Add
         </button>
       </div>
+
       <ul className="mt-4 w-full flex items-start justify-start gap-2 flex-wrap mb-8">
         {tasks.map(({ todo, id, title }) => (
           <li
@@ -74,6 +94,8 @@ export const CreateTask = () => {
           </li>
         ))}
       </ul>
+
+
     </div>
   );
 };
