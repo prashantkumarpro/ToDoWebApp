@@ -27,7 +27,7 @@ export const ToDoesProvider = ({ children }) => {
                 }),
             });
 
-            const newTodo = res.json();
+            const newTodo = await res.json();
 
             const newTask = {
                 title: title,
@@ -41,12 +41,41 @@ export const ToDoesProvider = ({ children }) => {
     };
 
     // Function to update a specific task
-    const updateTask = (updatedTask) => {
-        setTasks((prevTasks) =>
-            prevTasks.map((task) =>
-                task.id === updatedTask.id ? updatedTask : task,
-            ),
-        );
+    // const updateTask = (updatedTask) => {
+    //     setTasks((prevTasks) =>
+    //         prevTasks.map((task) =>
+    //             task.id === updatedTask.id ? updatedTask : task,
+    //         ),
+    //     );
+    // };
+
+    const updateTask = async (updatedTask) => {
+        try {
+            const res = await fetch(
+                `http://localhost:8000/api/todos/${updatedTask.id}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(updatedTask),
+                },
+            );
+
+            if (!res.ok) {
+                throw new Error("Failed to update task");
+            }
+
+            const updateTaskBackend = await res.json(); // This gets the updated task from the server
+
+            setTasks((prevTasks) =>
+                prevTasks.map((task) =>
+                    task.id === updateTaskBackend.id ? updateTaskBackend : task,
+                ),
+            );
+        } catch (error) {
+            console.error("Error updating task: ", error);
+        }
     };
 
     // Function to delete a specific task

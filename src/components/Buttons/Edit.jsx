@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Edit = ({ id }) => {
+const Edit = ({ editTaskId }) => {
     const navigate = useNavigate();
     const handelEdit = () => {
-        navigate(`/EditTask/${id}`);
+        navigate(`/EditTask/${editTaskId}`);
     };
 
     return (

@@ -35,7 +35,7 @@ export const Home = () => {
                                     {title}
                                 </h3>
                                 <div className="buttons flex items-center justify-center gap-5">
-                                    <Edit id={id} />
+                                    <Edit editTaskId={id} />
                                     <Remove taskId={id} />
                                 </div>
                             </li>

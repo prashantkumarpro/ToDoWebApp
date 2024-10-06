@@ -5,18 +5,17 @@ import { useNavigate, useParams } from "react-router-dom";
 const EditPage = () => {
   const [currentTask, setCurrentTask] = useState(null);
   const { tasks, updateTask } = useContext(toDoesContext);
-  const { id } = useParams();
+  const { editTaskId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
+    // console.log(id);
     if (tasks.length > 0) {
-      const task = tasks.find((task) => task.id == task.id);
-      // console.log(task.id);
-      console.log(tasks);
-      // console.log(tasks[0].id);
+      const task = tasks.find((task) => task.id == editTaskId);
+      console.log(editTaskId);
       setCurrentTask(task);
     }
-  }, [id, tasks]);
+  }, [editTaskId, tasks]);
 
   const handleTitleChange = (e) => {
     setCurrentTask({ ...currentTask, title: e.target.value });
@@ -24,12 +23,16 @@ const EditPage = () => {
   };
 
   const handleNoteChange = (e) => {
-    setCurrentTask({ ...currentTask, note: e.target.value });
+    setCurrentTask({ ...currentTask, todo: e.target.value });
   };
 
-  const handleSave = () => {
-    updateTask(currentTask);
-    navigate("/");
+  const handleSave = async () => {
+    try {
+      await updateTask(currentTask);
+      navigate("/");
+    } catch (error) {
+      console.error("Failed to update task: ", error);
+    }
   };
 
   return (
@@ -46,7 +49,7 @@ const EditPage = () => {
           <textarea
             name="note"
             id="note"
-            value={currentTask.note}
+            value={currentTask.todo}
             onChange={handleNoteChange}
             className="w-full bg-transparent h-auto outline-none overflow-auto -scroll-ml-56"
             placeholder="Take a notes"

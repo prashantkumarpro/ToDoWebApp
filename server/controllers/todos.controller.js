@@ -51,10 +51,10 @@ function postTodos(req, res, db) {
 
 // update todo
 function updateTodo(req, res, db) {
-	const id = Number(req.params.taskId);
+	const id = req.params.id;
 	const { title, todo } = req.body;
 	db("todos")
-		.where({ id: id })
+		.where({ id })
 		.update({ title: title, todo: todo })
 		.then((response) => {
 			if (response === 0) {
@@ -70,7 +70,7 @@ function updateTodo(req, res, db) {
 
 // delete todo
 function deleteTodo(req, res, db) {
-	const id = Number(req.params.id);
+	const id = req.params.id;
 	db("todos")
 		.where({ id })
 		.del()

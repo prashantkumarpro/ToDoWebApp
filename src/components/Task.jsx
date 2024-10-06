@@ -9,18 +9,19 @@ export const Task = () => {
 
     useEffect(() => {
         if (tasks.length > 0) {
-            const task = tasks.find(task => task._id == taskId);
+            const task = tasks.find((task) => task.id == taskId);
             setCurrentTask(task);
         }
     }, [taskId, tasks]);
 
     return (
-        <div className='w-full h-full'>
+        <div className="w-full h-full">
             {currentTask ? (
-                <div className='p-5'>
-                    <h2 className='text-xl font-bold uppercase'>{currentTask.title}</h2>
-                    <p className='mt-3'>{currentTask.description}</p>
-
+                <div className="p-5">
+                    <h2 className="text-xl font-bold uppercase">
+                        {currentTask.title}
+                    </h2>
+                    <p className="mt-3">{currentTask.todo}</p>
                 </div>
             ) : (
                 <p>Task not found.</p>
