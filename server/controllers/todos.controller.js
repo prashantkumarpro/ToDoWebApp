@@ -1,3 +1,5 @@
+const db = require("../models/db");
+
 // Get all Todos
 function getTodos(req, res, db) {
 	db.select("*")
