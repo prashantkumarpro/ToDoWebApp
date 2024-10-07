@@ -15,7 +15,7 @@ const db = knex({
   client: "pg",
   connection:
     "postgresql://profilestore_user:seyPY5L6v8tTPkRlIiN1N864qnvExs8c@dpg-cs1tamlds78s73bagit0-a.oregon-postgres.render.com/profilestore",
-  ssl: { rejectUnauthorized: false },
+  ssl: { rejectUnauthorized: true },
 });
 
 module.exports = db;
