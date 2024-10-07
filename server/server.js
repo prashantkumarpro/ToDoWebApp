@@ -4,7 +4,7 @@ const cors = require("cors");
 const path = require("path");
 const db = require("./models/db");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const {
 	getTodos,
