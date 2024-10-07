@@ -8,6 +8,7 @@ function getTodos(req, res, db) {
 			res.status(200).json(todo);
 		})
 		.catch((error) => {
+			console.error("Error fetching todos:", error);
 			res.status(500).json({ error: "Internal Server Error" });
 		});
 }

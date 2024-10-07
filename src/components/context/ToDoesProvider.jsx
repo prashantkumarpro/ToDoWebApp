@@ -8,7 +8,9 @@ export const ToDoesProvider = ({ children }) => {
     // Fetch initial data
     const fetchedData = async () => {
         try {
-            const res = await fetch("http://localhost:8000/api/todos");
+            const res = await fetch(
+                "https://todoapp-29o9.onrender.com/api/todos",
+            );
             const data = await res.json();
             setTasks(data);
         } catch (error) {
@@ -18,14 +20,17 @@ export const ToDoesProvider = ({ children }) => {
 
     const addTask = async (title, note) => {
         try {
-            const res = await fetch("http://localhost:8000/api/todos", {
-                method: "post",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    title: title,
-                    todo: note,
-                }),
-            });
+            const res = await fetch(
+                "https://todoapp-29o9.onrender.com/api/todos",
+                {
+                    method: "post",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        title: title,
+                        todo: note,
+                    }),
+                },
+            );
 
             const newTodo = await res.json();
 
@@ -53,7 +58,7 @@ export const ToDoesProvider = ({ children }) => {
     const updateTask = async (updatedTask) => {
         try {
             const res = await fetch(
-                `http://localhost:8000/api/todos/${updatedTask.id}`,
+                `https://todoapp-29o9.onrender.com/api/todos/${updatedTask.id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -82,7 +87,7 @@ export const ToDoesProvider = ({ children }) => {
     // Function to delete a specific task
     const deleteTask = async (deletedTask) => {
         const res = await fetch(
-            `http://localhost:8000/api/todos/${deletedTask.id}`,
+            `https://todoapp-29o9.onrender.com/api/todos/${deletedTask.id}`,
             {
                 method: "DELETE",
             },
