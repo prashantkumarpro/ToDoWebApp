@@ -49,6 +49,7 @@ export const ToDoesProvider = ({ children }) => {
     //     );
     // };
 
+    // update task
     const updateTask = async (updatedTask) => {
         try {
             const res = await fetch(
