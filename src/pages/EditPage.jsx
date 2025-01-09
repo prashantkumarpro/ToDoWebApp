@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { toDoesContext } from "./context/ToDoesContext";
+import { toDoesContext } from "../components/context/ToDoesContext";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditPage = () => {

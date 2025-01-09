@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { toDoesContext } from "./context/ToDoesContext";
+import { toDoesContext } from "../components/context/ToDoesContext";
 import { useParams } from "react-router-dom";
 
-export const Task = () => {
+ const Task = () => {
     const [currentTask, setCurrentTask] = useState(null);
     const { tasks } = useContext(toDoesContext);
     const { taskId } = useParams();
@@ -28,3 +28,5 @@ export const Task = () => {
         </div>
     );
 };
+
+export default Task

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { toDoesContext } from "./context/ToDoesContext";
+import { toDoesContext } from "../components/context/ToDoesContext";
 
 const AllTasks = () => {
     const { tasks } = useContext(toDoesContext);

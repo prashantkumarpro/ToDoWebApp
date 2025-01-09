@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import Edit from "./Buttons/Edit"
-import Remove from "./Buttons/Remove"
-import { toDoesContext } from "./context/ToDoesContext"
+import Edit from "../components/Buttons/Edit"
+import Remove from "../components/Buttons/Remove"
+import { toDoesContext } from "../components/context/ToDoesContext"
 import { useNavigate } from "react-router-dom"
 
 
-export const Home = () => {
+ const Home = () => {
 
     const { tasks } = useContext(toDoesContext);
     const navigate = useNavigate();
@@ -51,3 +51,5 @@ export const Home = () => {
         </>
     )
 }
+
+export default Home

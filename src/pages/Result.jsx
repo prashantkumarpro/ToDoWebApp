@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { toDoesContext } from './context/ToDoesContext'
+import { toDoesContext } from '../components/context/ToDoesContext'
 
 const Result = () => {
   const { searchQuery } = useParams()
